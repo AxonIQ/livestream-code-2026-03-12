@@ -1,0 +1,53 @@
+###
+GET http://localhost:9999/api/sessions-catalog
+
+
+###
+POST http://localhost:9999/api/sessions
+Content-Type: application/json
+
+{
+  "sessionId": "3123712750",
+  "maxCapacity": 12,
+  "startTime": "2026-03-12T17:30",
+  "endTime": "2026-03-12T18:30",
+  "sessionName": "Mitchell's super WOD",
+  "instructorName": "Mitchell"
+}
+
+###
+GET http://localhost:9999/api/sessions-catalog
+
+
+###
+GET http://localhost:9999/api/sessions-catalog/3123712739
+
+###
+POST http://localhost:9999/api/session-enrollments/sign-up
+Content-Type: application/json
+
+{
+  "sessionId": "3123712750",
+  "userId": "2c2effba-a0b4-4294-9f54-c13d8f6b9fdb"
+}
+
+###
+POST http://localhost:9999/api/users/register
+Content-Type: application/json
+
+{
+  "fullName": "Mitchell Herrijgers",
+  "password": "password",
+  "email": "mitchell@axoniq.io"
+}
+
+
+###
+POST http://localhost:9999/api/session-enrollments/sign-up
+Content-Type: application/json
+
+{
+  "sessionId": "3123712749",
+  "userId": "ee5ed66d-c850-4cb1-8b1e-21f4dd126634"
+}
+

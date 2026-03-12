@@ -1,0 +1,66 @@
+spring:
+  application:
+    name: Atlas Forge
+
+  docker:
+    compose:
+      enabled: false
+
+  # PostgreSQL Database Configuration
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5412}/${DB_NAME:axoniq_build_db}
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER:axon_user}
+    password: ${DB_PASSWORD:axon_password}
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  # JPA/Hibernate Configuration
+  jpa:
+    database-platform: io.axoniq.livestream.atlas_forge.config.AxonPostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        default_schema: public
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+# Swagger Configuration
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api-docs
+    version: openapi_3_1
+
+axon:
+  serializer:
+    general: jackson
+  axonserver:
+    servers: localhost:8129
+
+axoniq:
+  platform:
+    application-name: Atlas Forge
+    credentials: ACCESS_TOKEN
+
+server:
+  port: 9999
