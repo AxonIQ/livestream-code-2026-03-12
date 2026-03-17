@@ -68,11 +68,11 @@
 		</dependency>
 
 		<!-- Axon Framework Dependencies -->
-<!--		<dependency>-->
-<!--			<groupId>io.axoniq.platform</groupId>-->
-<!--			<artifactId>framework-client-spring-boot-starter</artifactId>-->
-<!--			<version>2.0.1</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>io.axoniq.platform</groupId>
+			<artifactId>framework-client-spring-boot-starter</artifactId>
+			<version>2.0.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.axonframework</groupId>
 			<artifactId>axon-messaging</artifactId>

@@ -60,6 +60,7 @@ axon:
 axoniq:
   platform:
     application-name: Atlas Forge
+    credentials: ACCESS_TOKEN
 
 server:
   port: 9999
