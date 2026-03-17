@@ -25,7 +25,7 @@ services:
       axoniq_axonserver_hostname: axon-server
       axoniq_axonserver_autocluster_dcb: true
       axoniq_axonserver_autocluster_contexts: _admin,default
-      axoniq_console_authentication: ACCESS_TOKEN
+      axoniq_console_authentication: livestream:your-token-here
     networks:
       - axoniq-build-network
     volumes:
