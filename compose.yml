@@ -10,7 +10,6 @@ services:
       - "5412:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - axoniq-build-network
 
@@ -24,8 +23,8 @@ services:
     environment:
       axoniq_axonserver_hostname: axon-server
       axoniq_axonserver_autocluster_dcb: true
+      axoniq_axonserver_autocluster_first: axon-server
       axoniq_axonserver_autocluster_contexts: _admin,default
-      axoniq_console_authentication: livestream:your-token-here
     networks:
       - axoniq-build-network
     volumes:
